@@ -1,0 +1,1300 @@
+@import url(covers.css);
+
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic);
+/* @import url(https://fonts.googleapis.com/css?family=Play&text=1234567890); */
+@font-face {
+	font-family: 'miniMAL';
+	src:url('fonts/miniMAL.eot');
+	src:url('fonts/miniMAL.eot?#iefix') format('embedded-opentype'),
+		url('fonts/miniMAL.woff') format('woff'),
+		url('fonts/miniMAL.ttf') format('truetype'),
+		url('fonts/miniMAL.svg?#icomoon') format('svg');
+}
+a::before,
+a::after,
+span::before,
+span::after,
+small::before,
+small::after,
+div::before,
+div::after,
+table::before,
+table::after,
+td::before,
+td::after {
+	display: inline-block;
+	font-family: "miniMAL";
+	font-weight: normal;
+	font-size: 18px;
+	speak: none;
+}
+
+/* html */
+body {
+	height: 100%;
+	background: url("http://crazy-goblins.com/mal/bg/skelatal_weave.png") #e6e6e6;
+}
+body,
+[type="text"],
+textarea{
+	font: bold 12px 'Roboto Condensed', sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px #000;
+}
+
+a {
+	text-decoration: none !important;
+	/*transition: all 0.1s linear;*/
+}
+
+/* formular */
+input,
+textarea {
+	background: none;
+	border: none;
+	outline: none;
+	resize: none;
+	text-transform: uppercase;
+	color: #fff;
+}
+input:not([type="text"]):not([type="textbox"]) {
+	background: none !important;
+	font-size: 0 !important;
+	line-height: 0px !important;
+	color: transparent !important;
+	z-index: 1;
+	cursor: pointer;
+}
+
+
+
+/* colors */
+body,
+#mal_control_strip a,
+#mal_control_strip td div {
+	color: rgba(255,255,255,0.8) !important;
+}
+a,
+#mal_control_strip td,
+#mal_control_strip a {
+	color: rgba(255,255,255,0.9) !important;
+}
+a:hover,
+#mal_control_strip td:hover,
+#mal_control_strip a:hover {
+	color: rgba(255,255,255,1) !important;
+}
+
+[href="/"],
+[href="http://www.craveonline.com"] {
+	opacity: 0.9;
+}
+[href="/"]:hover,
+[href="http://www.craveonline.com"]:hover {
+	opacity: 1;
+}
+
+
+
+/* control strip */
+#mal_control_strip {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 40px;
+	background: none #000 !important;
+	cursor: default;
+	z-index: 16;
+}
+@media screen and (max-width: 735px){
+	#mal_control_strip {
+		z-index: 11;
+	}
+}
+@media screen and (max-width: 500px){
+	#mal_control_strip {
+		height: 80px;
+	}
+}
+#mal_control_strip td {
+	position: absolute;
+	width: auto !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+#mal_control_strip td div {
+	margin: 0 !important;
+	text-transform: uppercase !important;
+	font-size: 0px !important;
+	line-height: 0px !important;
+}
+#mal_control_strip a {
+	display: block;
+	font: bold 12px/40px 'Roboto Condensed', sans-serif !important;
+	text-transform: uppercase !important;
+	white-space: nowrap;
+}
+#mal_control_strip a:not([href="/"])::before {
+	float: left;
+	margin-right: 10px;
+	width: 40px;
+	border-right: 1px dashed #333;
+	line-height: 40px;
+	text-align: center;
+}
+
+/* cs_pic */
+#mal_cs_pic a {
+	padding: 0 10px 0 5px;
+}
+
+/* list info */
+#mal_cs_listinfo {
+	z-index: 2;
+}
+#mal_cs_listinfo::before {
+	content: "\e629";
+	float: left;
+	width: 40px;
+	border-right: 1px dashed transparent;
+	border-bottom: 1px dashed transparent;
+	line-height: 40px;
+	text-align: center;
+}
+#mal_cs_listinfo a {
+	display: none;
+	position: absolute;
+	width: 160px;
+	border-top: 1px dashed #333;
+}
+#mal_cs_listinfo [href*="profile"] {
+	top: 40px;
+}
+#mal_cs_listinfo [href*="profile"]::before {
+	content: "\e605";
+}
+#mal_cs_listinfo [href*="profile"]::after {
+	height: 83px;
+}
+#mal_cs_listinfo form a  {
+	top: 82px;
+}
+#mal_cs_listinfo form a::before  {
+	content: "\f08b";
+}
+#mal_cs_listinfo:hover a {
+	display: block;
+}
+#mal_cs_listinfo:hover::before {
+	border-color: #333;
+}
+
+/* cs links */
+#mal_cs_links {
+	left: 40px;
+	z-index: 2;
+}
+#mal_cs_links a[href="/"] {
+	font-size: 0px !important;
+	line-height: 0px !important;
+}
+#mal_cs_links a[href="/"]::before {
+	content: url("http://cdn.myanimelist.net/images/list-top-logo.gif");
+	float: left;
+	padding: 0 10px 0 5px;
+	border-bottom: 1px dashed transparent;
+	border-left: 1px dashed transparent;
+}
+#mal_cs_links a:not([href="/"]) {
+	left: -40px;
+	width: 180px;
+	border-top: 1px dashed #333;
+}
+#mal_cs_links [href*="animelist"] {
+	top: 40px;
+}
+#mal_cs_links [href*="animelist"]::before {
+	content: "\e613";
+}
+#mal_cs_links [href*="animelist"]::after {
+	height: 123px;
+}
+#mal_cs_links [href*="mangalist"]  {
+	top: 81px;
+}
+#mal_cs_links [href*="mangalist"]::before  {
+	content: "\e618";
+}
+#mal_cs_links [href*="addtolist"] {
+	top: 122px;
+	left: -40px !important;
+	width: 130px !important;
+	padding-left: 50px;
+}
+#mal_cs_links [href*="addtolist"]::before {
+	top: 0;
+	left: 0;
+	border-bottom: none;
+	content: "\e601";
+}
+#mal_cs_links a:not([href="/"]) {
+	display: none;
+	position: absolute;
+	background: #000;
+}
+#mal_cs_links:hover a:not([href="/"]) {
+	display: block;
+}
+#mal_cs_links:hover a::before {
+	border-color: #333;
+}
+
+	/* dropdown shadows */
+#mal_cs_links [href*="animelist"]::after,
+#mal_cs_listinfo [href*="profile"]::after {
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: 0;
+	width: 100%;
+	background-color: #000;
+	box-shadow: 0px 0px 5px #000;
+	z-index: -1;
+}
+
+/* other links */
+#mal_cs_otherlinks {
+	left: 195px;
+}
+#mal_cs_pic + #mal_cs_otherlinks {
+	left: 155px;
+}
+@media screen and (max-width: 500px){
+	#mal_cs_otherlinks,
+	#mal_cs_pic + #mal_cs_otherlinks {
+		top: 40px;
+		left: -1px;
+	}
+}
+#mal_cs_otherlinks div:first-child {
+	padding: 0 10px;
+	border-left: 1px dashed transparent;
+	border-bottom: 1px dashed transparent;
+	font: bold 13px/40px 'Roboto Condensed', sans-serif !important;
+	white-space: nowrap;
+}
+#mal_cs_otherlinks [href*="profile"] {
+	display: inline-block;
+	font-size: 13px !important;
+	line-height: 39px !important;
+}
+#mal_cs_otherlinks div:last-child {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	top: 40px;
+	left: -40px;
+	background: #000;
+	box-shadow: 0px 0px 5px #000;
+	border-top: 1px dashed #333;
+	font: bold 12px/40px 'Roboto Condensed', sans-serif !important;
+}
+@media screen and (max-width: 500px){
+	#mal_cs_otherlinks div:last-child {
+		left: 0;
+	}
+}
+#mal_cs_otherlinks div a:not(:first-child) {
+	border-top: 1px dashed #333;
+}
+#mal_cs_otherlinks div:last-child a:not([[href*="sharedanime"]]) {
+	padding-right: 20px;
+}
+#mal_cs_otherlinks [href*="sharedanime"] {
+	display: inline-block;
+	float: left;
+	padding-right: 8px;
+}
+#mal_cs_otherlinks span {
+	position: relative;
+	float: right;
+	margin: 0 -2px 0 -10px;
+	padding: 0 20px;
+	background: #000;
+	font-size: 14px;
+}
+#mal_cs_otherlinks [href*="history"],
+#mal_cs_otherlinks [href*="login"] {
+	top: -1px;
+}
+#mal_cs_otherlinks [href*="forum"],
+#mal_cs_otherlinks [href*="register"],
+#mal_cs_otherlinks a:last-child[href*="export"],
+#mal_cs_otherlinks [href*="faq"] {
+	width: 180px;
+}
+#mal_cs_otherlinks [href*="login"]::before {
+	content: "\f090";
+}
+#mal_cs_otherlinks [href*="shared"]::before {
+	content: "\e62c";
+}
+#mal_cs_otherlinks [href*="export"]::before {
+	content: "\e644";
+}
+#mal_cs_otherlinks [href*="register"]::before {
+	content: "\e61d";
+}
+#mal_cs_otherlinks [href*="mangalist"]::before {
+	content: "\e618";
+}
+#mal_cs_otherlinks [href*="forum"]::before {
+	content: "\e61a";
+}
+#mal_cs_otherlinks [href*="faq"]::before {
+	content: "\e63c";
+}
+#mal_cs_otherlinks [href*="history"]::before {
+	content: "\e63d";
+}
+#mal_cs_otherlinks:hover div:last-child {
+	display: block;
+}
+#mal_cs_otherlinks:hover div:first-child {
+	border-color: #333;
+}
+
+
+/* navigation */
+table[align="center"]:not([class^=header]) {
+	position: fixed;
+	top: 40px;
+	right: 41px;
+	z-index: 30;
+	width: 190px !important;
+	background: #000;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+	box-shadow: 0 0 5px #000;
+}
+@media screen and (max-width: 735px) {
+	table[align="center"]:not([class^=header]) {
+		top: 80px;
+		right: auto;
+		left: 0;
+	}
+}
+@media screen and (max-width: 500px) {
+	table[align="center"]:not([class^=header]) {
+		top: 120px;
+		right: auto;
+		left: 0;
+	}
+}
+[class^="status"] {
+	width: 100% !important;
+	line-height: 40px;
+	text-align: right !important;
+}
+.status_selected {
+	position: absolute;
+	top: -40px;
+	right: 0;
+}
+.status_not_selected {
+	display: none;
+	float: right;
+}
+[class^="status"] a {
+	display: block;
+	padding: 0 0 0 10px;
+}
+[class^="status"] a:after {
+	display: block;
+	padding: 0 0 0 10px;
+}
+[class^="status"] a::before {
+	float: right;
+	margin: 0 0 0 10px;
+	width: 40px;
+	border-left: 1px dashed #333;
+	font-size: 12px;
+	text-align: center;
+}
+@media screen and (max-width: 735px) {
+	[class^="status"] {
+		text-align: left !important;
+	}
+	[class^="status"] a {
+		padding: 0 20px 0 0;
+	}
+	[class^="status"] a::before {
+		float: left;
+		margin: 0 10px 0 0;
+		border-left: 0;
+		border-right: 1px dashed #333;
+	}
+}
+
+.status_not_selected a {
+	border-top: 1px dashed #333;
+}
+.status_selected a::before {
+	border-color: transparent;
+}
+[class^="status"] [href*="status=1"]::before {
+	content: "\f04b";
+}
+[class^="status"] [href*="status=2"]::before {
+	content: "\f04d";
+}
+[class^="status"] [href*="status=3"]::before {
+	content: "\f04c";
+}
+[class^="status"] [href*="status=4"]::before {
+	content: "\f052";
+}
+[class^="status"] [href*="status=6"]::before {
+	content: "\f111";
+}
+[class^="status"] [href*="status=7"]::before {
+	content: "\f048";
+}
+tr:hover .status_not_selected {
+	display: block;
+}
+tr:hover .status_selected a::before {
+	border-color: #333;
+}
+
+/* search */
+#mal_cs_powered::before {
+	content: "\f02e";
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 0 12px 0 11px;
+	border-left: 1px dashed transparent;
+	line-height: 40px;
+}
+#mal_cs_powered #searchBox {
+	display: none;
+	position: fixed;
+	top: 40px;
+	right: 0;
+	width: 140px !important;
+	height: 40px;
+	padding: 0 50px 0 10px;
+	background-color: #000;
+	box-shadow: 0 0 5px #000;
+	border-top: 1px dashed #333;
+	font: bold 12px/40px 'Roboto Condensed', sans-serif !important;
+	text-align: right;
+	z-index: -1;
+}
+#searchListButton {
+	display: none;
+	position: fixed;
+	top: 40px;
+	right: 0;
+	padding: 13px 13px 13px 12px !important;
+	border-left: 1px dashed #333 !important;
+}
+#mal_cs_powered a {
+	display: none;
+}
+#mal_cs_powered:hover #searchBox,
+#mal_cs_powered #searchBox:focus,
+#mal_cs_powered:hover #searchBox + img,
+#mal_cs_powered #searchBox:focus + img {
+	display: block;
+}
+#mal_cs_powered:hover::before {
+	border-color: #333;
+}
+
+
+
+/* surround */
+#list_surround {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	padding-bottom: 40px;
+}
+#list_surround::before {
+	content: "x";
+	speak: none;
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	width: 100%;
+	background-color: #000;
+	box-shadow: 0 0 5px #000;
+	color: #000;
+	line-height: 40px;
+}
+#list_surround > br {
+	display: none;
+}
+#list_surround br:first-child {
+	display: inline;
+	line-height: 35px;
+}
+@media screen and (max-width: 735px) {
+	#list_surround br:first-child {
+		line-height: 75px;
+	}
+	#list_surround::before {
+		line-height: 80px;
+	}
+}
+@media screen and (max-width: 500px) {
+	#list_surround br:first-child {
+		line-height: 115px;
+	}
+	#list_surround::before {
+		line-height: 120px;
+	}
+}
+#inlineContent {
+	display: block !important;
+	height: 10px;
+	clear: left;
+}
+
+
+
+/* header */
+table[class^="header"] {
+	clear: left;
+	margin: 0 0 10px 0 !important;
+	width: 100% !important;
+	height: auto !important;
+	padding-top: 40px;
+	background: #000;
+	border-width: 5px 0 5px 0;
+	border-style: solid;
+}
+.header_cw {
+	border-bottom-color: #C00;
+}
+.header_cw ~ [class^="header"],
+.header_cw ~ #copyright {
+	border-top-color: #C00;
+}
+.header_completed {
+	border-bottom-color: #F80;
+}
+.header_completed ~ [class^="header"],
+.header_completed ~ #copyright {
+	border-top-color: #F80;
+}
+.header_onhold {
+	border-bottom-color: #FC0;
+}
+.header_onhold ~ [class^="header"],
+.header_onhold ~ #copyright {
+	border-top-color: #FC0;
+}
+.header_dropped {
+	border-bottom-color: #5D5;
+}
+.header_dropped ~ [class^="header"],
+.header_dropped ~ #copyright {
+	border-top-color: #5D5;
+}
+.header_ptw {
+	border-bottom-color: #09F;
+}
+.header_ptw ~ #copyright {
+	border-top-color: #09F;
+}
+.header_title {
+	padding-left: 10px;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 40px;
+	text-transform: none;
+	cursor: default;
+}
+
+/* sorting */
+[class^="header"] + table {
+	float: right !important;
+	margin: -55px 0px 0px !important;
+	width: 0 !important;
+	height: auto !important;
+	text-align: right;
+}
+.table_header {
+	width: 0% !important;
+	font-size: 0px;
+	line-height: 0px;
+}
+.table_headerLink[href*="order=1&"]::before,
+.table_headerLink[href*="order=4"]::before {
+	width: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+}
+.table_headerLink[href*="order=1&"]::before {
+	content: "\f15d";
+}
+.table_headerLink[href*="order=4"]::before {
+	content: "\f162";
+}
+
+
+
+/* tables */
+[class^="header"] ~ table {
+	position: relative;
+	margin: 0 0 10px 10px;
+}
+[class^="header"] ~ table,
+.hide {
+	float: left;
+	width: 225px;
+}
+[class^="td"] {
+	width: auto;
+	cursor: default;
+}
+
+/* cubes */
+[class^="td"] input,
+[class^="td"][width="30"],
+[id^="xmenu"]::before,
+[class="List_LightBox"]::before,
+.borderRBL div a::before,
+[class^="td"][width="45"],
+[class^="td"][width="45"] span,
+[id^="scorediv"]::after,
+[class^="td"][width="70"],
+[title$="number"],
+[id^="epLayer"]::after,
+[class^="td"][width="125"]::before,
+[id^="tagRowEdit"] span:first-child::before {
+	display: inline-block;
+	position: absolute;
+	width: 40px !important;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	/*transition: all 0.1s linear;*/
+	border: 0 dashed transparent;
+	opacity: 0;
+}
+tr:hover [class^="td"] input,
+tr:hover [class^="td"][width="30"],
+tr:hover [id^="xmenu"]::before,
+tr:hover [class="List_LightBox"]::before,
+tr:hover .borderRBL div a::before,
+tr:hover [class^="td"][width="45"],
+tr:hover [class^="td"][width="45"] span,
+tr:hover [id^="scorediv"]::after,
+tr:hover [class^="td"][width="70"],
+tr:hover [title$="number"],
+tr:hover [id^="epLayer"]::after,
+tr:hover [class^="td"][width="125"]::before,
+tr:hover [id^="tagRowEdit"] span:first-child::before {
+	background: rgba(0,0,0,0.8);
+	border-color: #333;
+	opacity: 1;
+}
+[id^="scoreval"],
+[id^="epText"] a {
+	position: relative !important;
+	border: none;
+	background: none !important;
+}
+
+/* counter [width="30"] */
+[class^="td"][width="30"] {
+	bottom: 0;
+}
+
+/* animetitle [style*="0"] */
+[class^="td"][style*="0"] {
+	width: 225px !important;
+	height: 300px;
+	box-shadow: 0 0 5px #000;
+}
+.animetitle {
+	position: absolute;
+	top: 0;
+	height: 300px;
+	background: #000;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	font-size: 13px;
+	white-space: normal;
+}
+.animetitle span {
+	display: table-cell;
+	width: 205px;
+	height: 24px;
+	padding: 5px 10px;
+	line-height: 20px;
+	vertical-align: middle;
+	text-shadow: 0 -1px #000, 1px 0 #000, 0 1px #000, -1px 0 #000;
+	/*transition: all 0.1s linear;*/
+}
+tr:hover .animetitle span {
+	background: rgba(0,0,0,0.8);
+	box-shadow: 0 0 5px #666;
+}
+
+/* airing */
+.animetitle + small,
+.animetitle + small::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-bottom-left-radius: 10px;
+}
+.animetitle + small {
+	width: 0;
+	padding: 0;
+	font-size: 0;
+	background: #fff;
+	font-weight: normal;
+	color: #000;
+	text-align: right;
+	transition: all 0.1s linear;
+}
+.animetitle + small::after {
+	content: "\f04b";
+	font-size: 10px;
+	color: #fff;
+	padding: 3px 8px 4px 11px;
+	background: #F00;
+}
+.animetitle + small:hover {
+	width: auto;
+	padding: 3px 35px 2px 10px;
+	font-size: 10px;
+}
+
+/* edit, add, more */
+[class="List_LightBox"]::before {
+	right: 0;
+	bottom: 163px;
+	z-index: 4;
+	border-width: 0 0 1px 0;
+	font-size: 16px;
+}
+[href*="edit"]::before {
+	content: "\e606";
+}
+[href*="selected"]::before {
+	content: "\e601";
+}
+[id^="xmenu"]::before {
+	content: "\e625";
+	right: 0;
+	bottom: 81px;
+	z-index: 5;
+	border-top: 1px dashed #333;
+	border-bottom: 1px dashed #333;
+	font-size: 16px;
+}
+
+/* info */
+.hide {
+	position: relative;
+	margin-left: -225px;
+}
+.hide table {
+	position: absolute;
+	top: 95px;
+	z-index: 4;
+	width: 225px;
+	height: 205px;
+	background: rgba(0,0,0,0.7);
+}
+.hide table::after {
+	content: "\e625";
+	position: absolute;
+	right: 12px;
+	bottom: 92px;
+	z-index: 5;
+	border-width: 1px 0 1px 0;
+	font-size: 16px;
+}
+.borderRBL {
+	position: absolute;
+	width: 165px;
+	height: 152px;
+	padding: 43px 10px 10px 10px ;
+	overflow-y: scroll;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: normal;
+	text-transform: none;
+}
+.borderRBL div a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 147px;
+	padding: 0 10px;
+	border-bottom: 1px dashed #333;
+	font-weight: bold;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+.borderRBL div a::before {
+	content: "\e60a";
+	right: 0;
+	background: none !important;
+	font-size: 16px;
+}
+.borderRBL > small {
+	display: inline-block;
+}
+.borderRBL::after {
+	content: "";
+	white-space: pre;
+	line-height: 7px;
+}
+
+/* episodes [width="70"] */
+[class^="td"][width="70"] {
+	right: 0;
+	bottom: 41px;
+	width: 38px\9 !important;
+	height: 38px\9 !important;
+	font-size: 11px;
+	font-weight: normal;
+	z-index: 4;
+}
+[id^="epText"] {
+	float: right;
+}
+[id^="epText"] a {
+	right: 0;
+	border: none;
+}
+[title*="increase"] {
+	font-size: 0px;
+	line-height: 0px;
+}
+[title*="increase"]::before {
+	content: "+";
+	position: absolute;
+	display: none;
+	right: 0;
+	padding: 4px 2px 7px 3px;
+	background: #fff !important;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000;
+	border-bottom-left-radius: 5px;
+}
+[id^="epLayer"]::after {
+	content: "\e616";
+	top: -1px;
+	right: 40px;
+	background: #000 !important;
+	border-width: 1px 1px 0 1px;
+}
+[value="Go"] {
+	top: 0;
+	right: 41px;
+}
+[id^="epID"] {
+	top: -1px;
+	right: 82px;
+	z-index: -1;
+	height: 38px !important;
+	background: #000 !important;
+	border-top: 1px dashed #333 !important;
+}
+td:hover [title*="increase"]::before {
+	display: inline-block !important;
+}
+td:hover [id^="epText"][style*="bold"] + [title*="increase"]::before {
+	display: none !important;
+}
+
+/* score [width="45"] */
+[class^="td"][width="45"]  {
+	z-index: 4;
+	right: 0;
+	bottom: 0;
+	width: 38px\9 !important;
+	height: 38px\9 !important;
+	font-size: 16px;
+	border-width: 1px 0 0 0;
+}
+[id^="scorediv"]::after {
+	content: "\e616";
+	top: -1px;
+	right: 40px;
+	background: #000 !important;
+	border-width: 1px 1px 0 1px;
+}
+[id^="scoretext"] {
+	right: 82px;
+	bottom: 0;
+	height: 38px !important;
+	background: #000 !important;
+	border-top: 1px dashed #333 !important;
+}
+[class^="td"][width="45"] [value="Go"] {
+	right: 40px;
+}
+
+/* tags [width="125"] */
+[class^="td"][width="125"] {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: auto !important;
+	height: 163px;
+}
+[id^="tagLinks"],
+textarea {
+	position: absolute;
+	right: 40px;
+	width: 165px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.6);
+	font-weight: normal;
+	font-size: 12px;
+	text-transform: none;
+}
+[id^="tagLinks"] {
+	top: -1px;
+	top: 1px\9;
+	z-index: -1;
+	height: 151px;
+	padding-top: 3px;
+	opacity: 0;
+	transition: opacity 0.1s linear;
+}
+[id^="tagLinks"] a {
+	cursor: default;
+}
+[id^="tagLinks"]::first-line {
+	font-weight: bold;
+	line-height: 37px;
+	font-size: 13px;
+}
+textarea {
+	top: -2px;
+	height: 144px;
+}
+[id^="tagRowEdit"][style$="block"] + [id^="tagLinks"] {
+	display: none !important;
+	cursor: default;
+}
+[value="Cancel"] {
+	top: 0;
+	right: 0;
+}
+[id^="tagRowEdit"] span:first-child::before,
+[value="Save"] {
+	top: -41px;
+	right: 40px;
+}
+[id^="tagRowEdit"] span:first-child::before {
+	content: "\e616";
+	border-right: 1px dashed #333;
+	font-size: 16px;
+}
+[class^="td"][width="125"]::before,
+[id^="tagChange"] a::before {
+	right: 0;
+	z-index: 1;
+}
+[id^="tagChange"] a::before {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 40px;
+}
+[class^="td"][width="125"]::before {
+	content: "\e608";
+	top: 2px\9;
+	font-size: 16px;
+}
+[class^="td"][width="125"]:hover {
+	color: #fff !important;
+}
+[id^="tagLinks"]::before {
+	z-index: -1;
+}
+[id^="tagChange"] a small {
+	display: none;
+}
+[class^="td"][width="125"]:hover [id^="tagLinks"] {
+	z-index: 0;
+	opacity: 1;
+}
+[class^="td"][width="125"]:hover [id^="tagRowEdit"][style*="block"] + [id^="tagLinks"] {
+	display: none !important;
+}
+
+/* rating [width="125"] + [width="50"] */
+[class^="td"][width="125"] + [width="50"] {
+	bottom: 82px;
+	left: 0;
+	font-size: 11px;
+	font-weight: normal;
+	z-index: 3;
+}
+
+/* type [width="45"] + [width="50"] */
+[class^="td"][width="45"] + [width="50"] {
+	position: absolute;
+	top: 82px;
+	right: 0;
+	width: 40px;
+	width: 38px\9;
+	background-color: #fff;
+	border-radius: 5px 5px 0 0;
+	border-bottom: 1px solid #000;
+	font-weight: normal;
+	font-size: 9px;
+	line-height: 14px;
+	line-height: 12px\9;
+	color: #000;
+	/*transition: all 0.1s linear;*/
+	opacity: 0;
+}
+tr:hover [class^="td"][width="45"] + [width="50"] {
+	opacity: 1;
+}
+
+/* priority [width="80"] */
+[class^="td"][width="80"] {
+	position: absolute;
+}
+
+/* tooltips */
+.table_headerLink[href*="order=1&"]::after,
+.table_headerLink[href*="order=4"]::after {
+	position: absolute;
+	right: 0;
+	z-index: -10;
+	width: 80px;
+	text-align: center;
+	padding: 0 10px;
+	background-color: #000;
+	border-right: 1px dashed #333;
+	font: bold 12px/40px 'Roboto Condensed', sans-serif;
+	white-space: nowrap;
+	opacity: 0;
+	box-shadow: 0 0 5px #000;
+}
+.table_headerLink[href*="order=1&"]::after {
+	content: "Sort by Name";
+}
+.table_headerLink[href*="order=4"]::after {
+	content: "Sort by Score";
+}
+
+.table_headerLink[href*="order=1&"]:hover::after,
+.table_headerLink[href*="order=4"]:hover::after {
+	z-index: 3;
+	top: 40px;
+	border-top: 1px dashed #333;
+	border-radius: 0;
+	opacity: 1;
+}
+
+/*
+[href*="editlist"]::after,
+[href*="go=add"]::after,
+[class^="td"][width="45"]::after,
+[class^="td"][width="70"]::after {
+	position: absolute;
+	right: 26px;
+	width: 41px;
+	z-index: 1;
+	background-color: #fff;
+	border-bottom: 1px solid #000;
+	border-radius: 5px 5px 0 0;
+	font: normal 9px/14px 'Roboto Condensed', sans-serif;
+	color: #000;
+	text-align: center;
+	transition: all 0.1s linear;
+	transform: rotate(-90deg);
+	opacity: 0;
+}
+[href*="editlist"]::after {
+	content: "Edit";
+}
+[href*="go=add"]::after {
+	content: "Add";
+}
+[href*="editlist"]::after,
+[href*="go=add"]::after {
+	top: 109px;
+}
+[href*="editlist"]:hover::after,
+[href*="go=add"]:hover::after {
+	opacity: 1;
+}
+[class^="td"][width="70"]::after {
+	content: "Episodes";
+	bottom: 13px;
+}
+[class^="td"][width="70"]:hover::after {
+	opacity: 1;
+}
+[class^="td"][width="45"]::after {
+	content: "Score";
+	bottom: 13px;
+}
+[class^="td"][width="45"]:hover::after {
+	opacity: 1;
+}
+*/
+
+/* category totals */
+.category_totals,
+#grand_totals {
+	position: absolute;
+	z-index: 15;	
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	background: #000;
+	font-size: 12px;
+	text-transform: none;
+	font-weight: normal;
+	cursor: default;
+}
+#grand_totals {
+	position: absolute;
+	right: 0;
+	bottom: 3px;
+}
+.category_totals {
+	box-shadow: 0 0 5px #000;
+}
+#grand_totals:hover {
+	box-shadow: 0 0 5px #000;
+}
+.category_totals:hover::before,
+#grand_totals:hover::before {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 175px;
+	border-top: 1px dashed #333;
+	font: bold 12px/40px 'Roboto Condensed', sans-serif !important;	
+	text-transform: uppercase;
+}
+.category_totals:hover::before {
+	content: "Category Totals";
+	left: 0;
+	padding-left: 50px;
+}
+#grand_totals:hover::before {
+	content: "Grand Totals";
+	left: 0;
+	padding-right: 50px;
+	text-align: right;
+}
+.category_totals::after,
+#grand_totals::after {
+	content: "\e61b";
+	position: absolute;
+	bottom: 0;
+	width: 40px;
+	background: #000;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+}
+.category_totals::after {
+	left: 0;
+}
+#grand_totals::after {
+	right: 0;
+}
+.category_totals:hover,
+#grand_totals:hover {
+	margin-top: -65px;
+	width: 205px;
+	height: auto;
+	padding: 10px 10px 50px 10px;
+}
+.category_totals:hover::after {
+	border-right: 1px dashed #333;
+}
+#grand_totals:hover::after {
+	border-left: 1px dashed #333;
+}
+
+
+
+
+
+
+
+
+/* copyright */
+#copyright {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 5px;
+	margin: 0 !important;
+	background: none #000 !important;
+	border-top-width: 5px;
+	border-top-style: solid;
+	line-height: 35px;
+	cursor: default;
+}
+#copyright a:first-child {
+	position: relative;
+	margin-left: 58px;
+	font-size: 0px;
+}
+#copyright a:first-child::before {
+	content: url("http://crazy-goblins.com/mal/crave.png");
+	position: absolute;
+	right: -4px;
+	bottom: -11px;
+}
+
+
+/* reset */
+#fancybox-inner input {
+	font-size: 12px !important;
+	line-height: 1em !important;
+	color: #000 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
