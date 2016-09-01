@@ -5,11 +5,7 @@
 /* @import url(https://fonts.googleapis.com/css?family=Play&text=1234567890); */
 @font-face {
 	font-family: 'miniMAL';
-	src:url('fonts/miniMAL.eot');
-	src:url('fonts/miniMAL.eot?#iefix') format('embedded-opentype'),
-		url('fonts/miniMAL.woff') format('woff'),
-		url('fonts/miniMAL.ttf') format('truetype'),
-		url('fonts/miniMAL.svg?#icomoon') format('svg');
+	src:url('miniMAL.woff') format('woff');
 }
 a::before,
 a::after,
@@ -33,7 +29,7 @@ td::after {
 /* html */
 body {
 	height: 100%;
-	background: url("http://crazy-goblins.com/mal/bg/skelatal_weave.png") #e6e6e6;
+	background: url("skelatal_weave.png") #e6e6e6;
 }
 body,
 [type="text"],
